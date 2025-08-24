@@ -1,0 +1,83 @@
+<!-- GTU Genie Project: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.onkeydown = function(e) {
+    if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) return false;
+    if (e.keyCode === 123) return false; // F12
+  };
+  </script>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTU Genie</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-sans">
+  <header class="p-4 shadow-xl bg-white text-black">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">GTU Genie</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#features" class="hover:underline">Features</a></li>
+          <li><a href="#pricing" class="hover:underline">Pricing</a></li>
+          <li><a href="#support" class="hover:underline">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="text-center mt-16 px-4">
+    <h2 class="text-4xl font-extrabold mb-4">Your Smart GTU Assistant</h2>
+    <p class="text-lg mb-8">Get results, circulars, study materials, and much more. All in one place.</p>
+    <a href="/login.html" class="bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition">Get Started</a>
+  </main>
+
+  <section id="features" class="mt-20 px-6">
+    <h3 class="text-3xl font-semibold mb-6 text-center">Features</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Real-time GTU Updates</h4>
+        <p>Live API integration with GTU for results and circulars.</p>
+      </div>
+      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Protected Study Content</h4>
+        <p>Subscription-based access with content protection & anti-sharing.</p>
+      </div>
+      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Referral Rewards</h4>
+        <p>Refer friends and earn 5% weekly commissions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="mt-20 text-center px-6">
+    <h3 class="text-3xl font-semibold mb-6">Subscription Plans</h3>
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Monthly</h4>
+        <p class="mb-4">Access all content for 30 days</p>
+        <p class="text-2xl font-bold">₹49</p>
+      </div>
+      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Quarterly</h4>
+        <p class="mb-4">Access for 3 months</p>
+        <p class="text-2xl font-bold">₹129</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" class="mt-20 px-6 text-center">
+    <h3 class="text-3xl font-semibold mb-6">Need Help?</h3>
+    <p class="mb-2">Contact us on WhatsApp anytime!</p>
+    <a href="https://wa.me/917487979267" class="underline text-white">Chat on WhatsApp</a>
+  </section>
+
+  <footer class="mt-20 py-6 bg-black text-center text-white">
+    <p>Made by GTUinsta Team | Founded by HHM</p>
+  </footer>
+</body>
+</html>
