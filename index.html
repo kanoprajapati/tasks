@@ -1,83 +1,523 @@
-<!-- GTU Genie Project: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
-  document.onkeydown = function(e) {
-    if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) return false;
-    if (e.keyCode === 123) return false; // F12
-  };
-  </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GTU Genie</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/bootstrap.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <title>Krupesh Portfolio</title>
 </head>
-<body class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-sans">
-  <header class="p-4 shadow-xl bg-white text-black">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">GTU Genie</h1>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><a href="#features" class="hover:underline">Features</a></li>
-          <li><a href="#pricing" class="hover:underline">Pricing</a></li>
-          <li><a href="#support" class="hover:underline">Support</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="text-center mt-16 px-4">
-    <h2 class="text-4xl font-extrabold mb-4">Your Smart GTU Assistant</h2>
-    <p class="text-lg mb-8">Get results, circulars, study materials, and much more. All in one place.</p>
-    <a href="/login.html" class="bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition">Get Started</a>
-  </main>
-
-  <section id="features" class="mt-20 px-6">
-    <h3 class="text-3xl font-semibold mb-6 text-center">Features</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <h4 class="text-xl font-bold mb-2">Real-time GTU Updates</h4>
-        <p>Live API integration with GTU for results and circulars.</p>
+<body class="loading">
+  
+ <div id="preloader" role="status" aria-live="polite" aria-label="Site loading">
+    <div class="loader-card" aria-hidden="false">
+      <div class="brand-row">
+        <div class="logo" aria-hidden="true">
+          <div class="case"></div>
+        </div>
+        <div>
+          <div class="title">Krupesh Portfolio</div>
+          <div class="muted">Loading<span class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span></div>
+        </div>
+        <div class="ring" aria-hidden="true"></div>
       </div>
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <h4 class="text-xl font-bold mb-2">Protected Study Content</h4>
-        <p>Subscription-based access with content protection & anti-sharing.</p>
+
+      <div class="progress-wrap" aria-label="Loading progress">
+        <div class="bar" aria-hidden="true"><div class="fill" id="fill"></div></div>
+        <div class="stat">
+          <div id="statusText">Initializing…</div>
+          <div id="percent" aria-live="polite" aria-atomic="true">0%</div>
+        </div>
       </div>
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <h4 class="text-xl font-bold mb-2">Referral Rewards</h4>
-        <p>Refer friends and earn 5% weekly commissions.</p>
+
+      <div class="muted" id="tips">
+        Tip: Great Portfolio convert visitors into clients. Optimizing assets…
       </div>
     </div>
-  </section>
+  </div>
+  <main>
+<nav class="navbar navbar-expand-lg navbar-dark bs-white  bg-dark ">
+  <div class="container-fluid"  style="display: flex;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  text-center mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#service">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#work">Work</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#project">Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blog">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <section id="pricing" class="mt-20 text-center px-6">
-    <h3 class="text-3xl font-semibold mb-6">Subscription Plans</h3>
-    <div class="flex flex-col md:flex-row justify-center gap-8">
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <h4 class="text-xl font-bold mb-2">Monthly</h4>
-        <p class="mb-4">Access all content for 30 days</p>
-        <p class="text-2xl font-bold">₹49</p>
-      </div>
-      <div class="bg-white text-black p-6 rounded-xl shadow-lg">
-        <h4 class="text-xl font-bold mb-2">Quarterly</h4>
-        <p class="mb-4">Access for 3 months</p>
-        <p class="text-2xl font-bold">₹129</p>
+ <section class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+      <h5>Hello !</h5>
+      <h1>I’m <span class="fw-bold">Krupesh Prajapati</span></h1>
+      <h1 class="text-primary fw-bold">Web Developer</h1>
+      <div class="mt-4 d-flex gap-3">
+        <a href="https://www.linkedin.com/in/krupesh-prajapati-ba3764337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-primary rounded-pill px-4">Message <i class="fa fa-arrow-right"></i></a>
+        <!-- <a href="#" class="btn btn-light px-4 text-primary rounded-pill"> -->
+          <!-- Download CV <i class="fa fa-download text-primary" aria-hidden="true"></i> -->
+        <!-- </a> -->
       </div>
     </div>
-  </section>
 
-  <section id="support" class="mt-20 px-6 text-center">
-    <h3 class="text-3xl font-semibold mb-6">Need Help?</h3>
-    <p class="mb-2">Contact us on WhatsApp anytime!</p>
-    <a href="https://wa.me/917487979267" class="underline text-white">Chat on WhatsApp</a>
-  </section>
+    <div class="col-md-6 text-center mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="1000">
+      <img src="./assets/img/Banner.png" alt="Krupesh Prajapati" class="img-fluid banner-img" />
+    </div>
 
-  <footer class="mt-20 py-6 bg-black text-center text-white">
-    <p>Made by GTUinsta Team | Founded by HHM</p>
-  </footer>
+  </div>
+</section>
+
+
+
+<section class="container py-5 text-white" id="about" >
+  <div class="row align-items-center">
+    
+    <div class="col-md-5 mb-4  mb-md-0 text-center" data-aos="zoom-in" data-aos-duration="1000">
+      <img src="./assets/img/About.png" alt="About Krupesh" class="img-fluid rounded p-2" style="max-width:100%; height: auto;" />
+    </div>
+
+    <div class="col-md-7" data-aos="fade-left" data-aos-duration="1000">
+      <h5 class="text-primary fw-bold my-4" >About Me</h5>
+      <h2 class="fw-bold">Krupesh Prajapati</h2>
+      <p class="mt-3">
+        I'm a passionate and detail-oriented freelance web developer with experience in building modern, responsive websites and web applications.
+        I specialize in creating clean, efficient code and delivering high-quality digital experiences that meet client goals — engaging experiences that drive success.
+      </p>
+
+      <div class="row mt-4">
+        <div class="col-sm-6 mb-2">
+          <strong>Name:</strong> Krupesh Prajapati
+        </div>
+        <div class="col-sm-6 mb-2">
+          <strong>Location:</strong> Ahmedabad, India
+        </div>
+        <div class="col-sm-6 mb-2">
+          <strong>Email:</strong> krupeshcodes@gmail.com
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="container py-5 text-white" id="service">
+  <h5 class="text-primary fw-bold mb-4 my-4">MY SERVICES</h5>
+  <div class="row g-4">
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">Web Development</h5>
+        <p>Passionate Web Developer turning ideas into digital experiences.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">Domain Provide</h5>
+        <p>Secure your perfect domain—simple, fast, and hassle-free!</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">Hostinger Provide</h5>
+        <p>Launch your website with Hostinger’s blazing speed.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">Website Maintenance</h5>
+        <p>Keep your website fresh, secure, and running smoothly.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">Responsive</h5>
+        <p>Mobile-friendly, tablet-ready, desktop-perfect—every screen size.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+      <div class="service-card text-center p-4 h-100 border border-light rounded-1">
+        <i class="fa fa-cog text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold">UI / UX Design</h5>
+        <p>Crafting smooth, engaging user journeys and effortless experiences.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container py-5 text-white" id="work">
+  <h5 class="text-primary fw-bold mb-4 my-4">MY WORK</h5>
+  <div class="row g-4 mb-5">
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="work-card">
+        <img src=".\assets\img\work1.png" alt="Gallery 1" class="img-fluid rounded-1 shadow w-100 h-100" />
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="work-card">
+        <img src=".\assets\img\image.png" alt="Gallery 2" class="img-fluid rounded-1  shadow w-100 h-100" />
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="work-card">
+        <img src=".\assets\img\image1.png" alt="Gallery 3" class="img-fluid rounded-1 shadow w-100 h-100" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container py-5 text-white" id="project">
+  <div class="row align-items-center">
+    <!-- Text -->
+    <div class="col-md-7" data-aos="fade-right" data-aos-duration="1000">
+      <h6 class="text-primary fw-bold my-4">PROJECT IN MIND?</h6>
+      <h2 class="fw-bold my-4">We’ll Make Your Website<br>Shine Like Never Before.</h2>
+      <p class="my-4">
+        Premium Web Design, Development, and SEO services to help your business stand out.
+      </p>
+      <a href="#" class="btn btn-primary rounded-pill px-4">Get Any Project</a>
+      <ul class="List">
+        <li><a href="http://mkengineeringindustries.in">Mk Engineering industries</a></li>
+        <li><a href="https://infomation-producetion.netlify.app/"> Infomation product</a></li>
+        <li><a href="https://www.yugentradingandcontracting.com/"> Yugen Trading and Contracting</a></li>
+        <li><a href="https://car-walas1.netlify.app/"> Car Selling</a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-5 text-center" data-aos="fade-left" data-aos-duration="1000">
+      <img src="assets/img/Picture1.png" alt="Project Person" class="img-fluid p-2 rounded-4" />
+    </div>
+  </div>
+</section>
+
+
+<section class="container py-5 text-white">
+  <div class="row align-items-center">
+    
+    <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+      <h5 class="text-primary my-4 fw-bold">SKILLSET</h5>
+      <h2 class="fw-bold my-4">Creative And Professional Skills Across Key Areas</h2>
+      <p class="my-4">
+        Art such as "Senior Software Engineer with over five years of experience".
+      </p>
+      <a href="#" class="btn btn-primary rounded-pill px-4">Start Your Project</a>
+    </div>
+
+    <div class="col-md-6">
+      
+      <div class="mb-3" data-aos="fade-left">
+        <div class="d-flex justify-content-between">
+          <span>Full Stack Developer</span>
+          <span class="text-primary fw-bold">73%</span>
+        </div>
+        <div class="progress rounded-pill">
+          <div class="progress-bar bg-primary rounded-pill" style="width: 73%"></div>
+        </div>
+      </div>
+
+      <div class="mb-3" data-aos="fade-left">
+        <div class="d-flex justify-content-between">
+          <span>Front-End Development</span>
+          <span class="text-primary fw-bold">89%</span>
+        </div>
+        <div class="progress rounded-pill">
+          <div class="progress-bar bg-primary rounded-pill" style="width: 89%"></div>
+        </div>
+      </div>
+
+      <div class="mb-3" data-aos="fade-left">
+        <div class="d-flex justify-content-between">
+          <span>Back-End Development</span>
+          <span class="text-primary fw-bold">75%</span>
+        </div>
+        <div class="progress rounded-pill">
+          <div class="progress-bar bg-primary rounded-pill" style="width: 75%"></div>
+        </div>
+      </div>
+
+      <div class="mb-3" data-aos="fade-left">
+        <div class="d-flex justify-content-between">
+          <span>UI Design & UX Development</span>
+          <span class="text-primary fw-bold">52%</span>
+        </div>
+        <div class="progress rounded-pill">
+          <div class="progress-bar bg-primary rounded-pill" style="width: 52%"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section  class="container py-5 text-white">
+  <div class="row align-items-center">
+    <div class="col-md-7" data-aos="fade-right" data-aos-duration="1000">
+      <h6 class="text-primary fw-bold my-4">MY EDUCATION</h6>
+      <div class="education">
+      <h2 class="m-4">Sheth R.T. Higher Education School (2020-2021)</h2>
+      <p class="m-4">Begin By stating your professional tital or the target role and your experience level</p>
+      <a href="" class="m-4"><button>Secoandary School Certification</button></a>
+      </div>
+        <div class="education">
+      <h2 class="m-4">Sheth R.T. Higher Education School (2022-2023)</h2>
+      <p class="m-4">Begin By stating your professional tital or the target role and your experience level</p>
+      <a href="" class="m-4"><button>Higher Secondary Certification</button></a>
+      </div>
+          <div class="education">
+      <h2 class="m-4">Silver Oak University (2023-Persuing)</h2>
+      <p class="m-4">Begin By stating your professional tital or the target role and your experience level</p>
+      <a href="" class="m-4"><button>Bachelor Of Computer applications</button></a>
+      </div>
+    </div>
+
+    <div class="col-md-5 text-center" data-aos="fade-left" data-aos-duration="1000">
+      <img src="./assets/img/study.png" alt="Project Person" class="img-fluid p-2 rounded-4" />
+    </div>
+  </div>
+</section>
+
+
+<section class="container py-5 text-white" id="blog">
+
+  <h5 class="text-primary fw-bold mb-4" data-aos="fade-right">MY BLOG</h5>
+  <div class="row g-4 mb-5">
+
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="card bg-dark text-white h-100 rounded-4">
+        <img src="assets/img/blog.png" class="card-img-top rounded-top-4" alt="...">
+        <div class="card-body">
+          <h6 class="text-primary">12 Aug 2024</h6>
+          <h5 class="card-title">Beautiful Work Showcase</h5>
+          <p class="card-text">Discover the projects that define our passion for design and development.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card bg-dark text-white h-100 rounded-4">
+        <img src="assets/img/blog1.png" class="card-img-top rounded-top-4" alt="...">
+        <div class="card-body">
+          <h6 class="text-primary">31 Dec 2024</h6>
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text">We build websites that are fast, modern, and easy to use.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card bg-dark text-white h-100 rounded-4">
+        <img src="assets/img/blog2.jpg" class="card-img-top rounded-top-4" alt="...">
+        <div class="card-body">
+          <h6 class="text-primary">07 Sep 2025</h6>
+          <h5 class="card-title">Our Marketing Strategy</h5>
+          <p class="card-text">We combine creativity with data-driven the right audience at the right time.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h5 class="text-primary fw-bold mb-4" data-aos="fade-right">CONNECT US</h5>
+  <form id="contactForm" data-aos="fade-up">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" name="user_name" class="form-control bg-dark text-white border border-secondary my-3 p-4" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" name="user_email" class="form-control bg-dark text-white border border-secondary my-3 p-4" placeholder="Your Email" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" name="user_phone" class="form-control bg-dark text-white border border-secondary my-3 p-4" placeholder="Phone" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" name="user_subject" class="form-control bg-dark text-white border border-secondary my-3 p-4" placeholder="Subject" required>
+      </div>
+      <div class="col-12">
+        <textarea rows="4" name="message" class="form-control bg-dark text-white border border-secondary px-4 my-3 p-4" placeholder="Type Message" required></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary rounded-pill px-5 py-4">Send Message</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-between align-items-center mt-5 pt-4 border-top border-secondary">
+    <div>
+      <a href="#" class="text-white-50 me-3"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" class="text-white-50 me-3"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" class="text-white-50 me-3"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/krupesh-prajapati-ba3764337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-white-50"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <div class="text-white-50 small">&copy; 2025 Portfolio By Krupesh Prajapati</div>
+
+  </div>
+
+</section>
+</main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
+  <script src="./assets/bootstrap.js"></script>
+</body>
+<div aria-live="polite" aria-atomic="true" class="position-fixed top-0 end-0 p-3" style="z-index: 9999;">
+  <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Message sent successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+
+     (function(){
+      const fill = document.getElementById('fill');
+      const percentEl = document.getElementById('percent');
+      const statusText = document.getElementById('statusText');
+      const tips = document.getElementById('tips');
+      const preloader = document.getElementById('preloader');
+
+      const steps = [
+        { at: 8,  text: 'Warming up server' },
+        { at: 18, text: 'Loading fonts & icons' },
+        { at: 35, text: 'Fetching images' },
+        { at: 52, text: 'Optimizing scripts' },
+        { at: 68, text: 'Setting up analytics' },
+        { at: 82, text: 'Polishing UI' },
+        { at: 95, text: 'Almost there' },
+      ];
+
+      // Simulate progressive loading smoothly until real load event
+      let p = 0;
+      let rafId;
+      const speed = 0.45; // higher = faster simulation
+
+      function updateUI(val){
+        fill.style.width = val + '%';
+        percentEl.textContent = Math.floor(val) + '%';
+        for(const step of steps){
+          if(val >= step.at) statusText.textContent = step.text;
+        }
+      }
+
+      function loop(){
+        // Ease out as it approaches 92%
+        const target = 92;
+        p += (target - p) * (speed/60);
+        if (p > target - 0.1) p = target;
+        updateUI(p);
+        rafId = requestAnimationFrame(loop);
+      }
+      rafId = requestAnimationFrame(loop);
+
+      // On real page loaded, finish to 100 and hide
+      function finish(){
+        cancelAnimationFrame(rafId);
+        const start = p;
+        const duration = 600; // ms
+        const t0 = performance.now();
+        function tween(now){
+          const t = Math.min(1, (now - t0)/duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          const val = start + (100 - start) * eased;
+          updateUI(val);
+          if(t < 1){
+            requestAnimationFrame(tween);
+          }else{
+            statusText.textContent = 'Ready';
+            tips.textContent = 'Welcome! Delivering excellence for your business.';
+            // Small delay then hide
+            setTimeout(()=>{
+              preloader.classList.add('is-hidden');
+              document.body.classList.remove('loading');
+            }, 250);
+          }
+        }
+        requestAnimationFrame(tween);
+      }
+
+      // If DOM is ready but not all assets: speed up a bit
+      document.addEventListener('DOMContentLoaded', ()=> {
+        statusText.textContent = 'Preparing content';
+      });
+
+      window.addEventListener('load', finish);
+
+      // Safety: auto-finish after 6.5s (in case some resource stalls)
+      setTimeout(()=> {
+        if (!preloader.classList.contains('is-hidden')) finish();
+      }, 6500);
+    })();
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var form = this;
+    var formData = new FormData(form);
+    fetch('sendmail.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+      if (result.trim() === 'success') {
+        var toastEl = document.getElementById('successToast');
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+        form.reset();
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+      console.log(result);
+    })
+    .catch(() => {
+      alert('Failed to send message. Please try again.');
+    });
+  });
+</script>
 </body>
 </html>
